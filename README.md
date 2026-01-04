@@ -35,14 +35,14 @@ Bu proje, nesne yönelimli programlama (OOP) prensipleri kullanılarak geliştir
    javac *.java
    ```
 
-# Önce her şeyi derle
+# Önce her şeyi derleriz
 
 javac \*.java
 
-# Ana programı çalıştır (Dosya kaydı yapacak mı bak)
+# Ana programı çalıştırırız (Dosya kaydı yapacak mı bakılır)
 
 java Main
 
-# Testleri çalıştır (10/10 veriyor mu bak)
+# Testleri çalıştırırız (10/10 veriyor mu bakılır)
 
 java ProductTest
