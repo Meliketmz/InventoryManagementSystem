@@ -11,15 +11,17 @@ public class StockManager {
         this.supplierName = supplierName;
     }
 
-    // Stok miktarını güvenli bir şekilde günceller
-    public void manageStockUpdate(String productName, int amount) {
-        Product p = inventory.findProductByName(productName);
-        if (p != null) {
-            p.updateStock(amount);
-            System.out.println(productName + " stoku güncellendi. Yeni miktar: " + p.getStockLevel());
-        } else {
-            System.out.println("Hata: Ürün bulunamadı!");
-        }
+   
+    // StockManager.java içinde metodun imzasını 'throws' ile güncelleme:
+    public void manageStockUpdate(String productName, int amount) throws InsufficientStockException {
+    Product p = inventory.findProductByName(productName);
+    if (p != null) {
+        // Burada updateStock metodu hata fırlatabilir, o yüzden throws ekledik
+        p.updateStock(amount);
+        System.out.println(productName + " stoku güncellendi. Yeni miktar: " + p.getStockLevel());
+    } else {
+        System.out.println("Hata: Ürün bulunamadı!");
+    }
     }
 
     // Tedarikçi ve envanter durumunu raporlar

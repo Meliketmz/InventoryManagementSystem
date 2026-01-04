@@ -17,8 +17,11 @@ public class Product implements Storable {
 
     // Storable arayüzünden gelen metotların uygulanması
     @Override
-    public void updateStock(int quantity) {
-        this.stockQuantity += quantity;
+    public void updateStock(int quantity) throws InsufficientStockException {
+    if (this.stockQuantity + quantity < 0) {
+        throw new InsufficientStockException("Hata: " + name + " için yetersiz stok! (Mevcut: " + stockQuantity + ")");
+    }
+    this.stockQuantity += quantity;
     }
 
     @Override
