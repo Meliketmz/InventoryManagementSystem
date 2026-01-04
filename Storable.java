@@ -1,10 +1,10 @@
 /**
  * Storable arayüzü, envanter sistemindeki nesnelerin 
- * sahip olması gereken temel stok davranışlarını tanımlar.
+ * temel stok davranışlarını ve hata yönetimini tanımlar.
  */
 public interface Storable {
-    // Stok miktarını artırmak veya azaltmak için kullanılır
-    void updateStock(int quantity);
+    // Stok miktarını günceller, yetersiz stok durumunda hata fırlatır
+    void updateStock(int quantity) throws InsufficientStockException;
     
     // Mevcut stok miktarını döndürür
     int getStockLevel();

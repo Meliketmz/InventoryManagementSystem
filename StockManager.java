@@ -32,4 +32,12 @@ public class StockManager {
         }
         inventory.checkLowStockAlerts();
     }
+
+    public void removeProductFromInventory(String id) {
+    if (inventory.removeProduct(id)) {
+        System.out.println("ID'si " + id + " olan ürün başarıyla silindi.");
+    } else {
+        System.out.println("Hata: Silinmek istenen ürün bulunamadı!");
+    }
+    }
 }
