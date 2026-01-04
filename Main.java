@@ -1,29 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        // 1. Envanter Nesnesi Oluşturma
         Inventory myInventory = new Inventory();
-
-        // 2. StockManager Oluşturma (Tedarikçi ismiyle)
         StockManager manager = new StockManager(myInventory, "Global Lojistik");
 
-        // 3. Ürünler Oluşturma (Polymorphism örneği olarak Product referansı kullanıyoruz)
+        // Ürünleri ekliyoruz
         Product elma = new Product("P001", "Elma", 50, 15.5);
-        Product sut = new PerishableProduct("P002", "Süt", 3, 25.0, "2024-12-31");
-
-        // 4. Ürünleri Envantere Ekleme
+        Product sut = new PerishableProduct("P002", "Süt", 5, 25.0, "2024-12-31");
         myInventory.addProduct(elma);
         myInventory.addProduct(sut);
 
-        System.out.println("\n--- Mevcut Durum ---");
-        manager.displayInventoryStatus();
+        System.out.println("\n--- TEST 1: Ürün Silme ---");
+        manager.removeProductFromInventory("P001"); // Elma'yı siliyoruz
 
-        // 5. Stok Güncelleme İşlemi
-        System.out.println("\n--- İşlem: Stok Güncelleme ---");
-        manager.manageStockUpdate("Elma", -10); // 10 tane satıldı
-        manager.manageStockUpdate("Süt", 5);   // 5 tane yeni geldi
+        System.out.println("\n--- TEST 2: Hata Yönetimi (Eksi Stok) ---");
+        try {
+            // Süt stoku 5 adet. 10 adet çıkarmaya çalışırsak hata fırlatmalı.
+            manager.manageStockUpdate("Süt", -10); 
+        } catch (InsufficientStockException e) {
+            System.out.println("Yakalanan Hata: " + e.getMessage());
+        }
 
-        // 6. Son Durum ve Kritik Stok Kontrolü
-        System.out.println("\n--- Final Durum ---");
+        System.out.println("\n--- Final Durum Raporu ---");
         manager.displayInventoryStatus();
     }
 }
