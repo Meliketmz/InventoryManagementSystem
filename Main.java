@@ -20,6 +20,11 @@ public class Main {
             System.out.println("Yakalanan Hata: " + e.getMessage());
         }
 
+        // --- OPSİYONEL ÖZELLİK TESTİ: Dosya Kaydı ---
+        InventoryFileManager fileManager = new InventoryFileManager("inventory.txt");
+        fileManager.saveInventory(myInventory.getAllProducts());
+
+
         System.out.println("\n--- Final Durum Raporu ---");
         manager.displayInventoryStatus();
     }
