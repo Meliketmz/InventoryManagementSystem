@@ -41,4 +41,9 @@ public class Inventory {
     public List<Product> getAllProducts() {
         return products;
     }
+
+    // Ürün silme özelliği (Ürün çıkarma işlemi)
+public boolean removeProduct(String id) {
+    return products.removeIf(p -> p.getId().equals(id));
+    }
 }
