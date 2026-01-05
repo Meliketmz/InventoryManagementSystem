@@ -1,0 +1,9 @@
+=== SİSTEM GENEL TEST RAPORU ===
+Tarih: 2026-01-05T20:03:24.372734600
+---------------------------------
+[MODÜL: INVENTORY]
+- 10 Birim Ekleme ve Liste Kontrolü: BAŞARILI
+[MODÜL: STOCK MANAGER]
+- Stok Artırma İşlemi: BAŞARILI
+[MODÜL: FILE I/O]
+- Dosya Yazma Erişimi: BAŞARILI
