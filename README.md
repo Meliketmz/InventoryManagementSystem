@@ -1,4 +1,4 @@
-# Envanter Yonetim Sistemi
+# Envanter Yönetim Sistemi
 
 Bu proje, nesne yönelimli programlama (OOP) prensipleri kullanılarak geliştirilmiş, esnek ve modüler bir **Envanter Yönetim Sistemi**dir. Sistem, ürünlerin takibini, stok güncellemelerini, kritik stok uyarılarını ve verilerin kalıcı olarak saklanmasını sağlar.
 
@@ -6,7 +6,8 @@ Bu proje, nesne yönelimli programlama (OOP) prensipleri kullanılarak geliştir
 
 - **OOP Prensipleri:** Kalıtım (Inheritance), Polimorfizm, Kapsülleme (Encapsulation) ve Arayüz (Interface) kullanımı.
 - **Hata Yönetimi (Exception Handling):** Yetersiz stok durumları için özel `InsufficientStockException` sınıfı ile güvenli işlem takibi.
-- **Birim Testleri:** Sistemin kararlılığını ölçen 10 farklı senaryoyu kapsayan kapsamlı test modülü.
+- **Kapsamlı Birim Testleri:** Tüm sistem bileşenlerini (Inventory, Manager, File System) denetleyen modüler test yapısı.
+- **Otomatik Test Raporlama:** `SystemTestRunner` ile tüm testlerin tek komutla çalıştırılması ve `test_log.txt` dosyasına raporlanması.
 - **Dosya İşlemleri (File I/O):** Envanter verilerinin `inventory.txt` dosyasına otomatik kaydedilmesi.
 - **Kritik Stok Takibi:** Stok seviyesi 5'in altına düşen ürünler için otomatik uyarı sistemi.
 
@@ -20,11 +21,20 @@ Bu proje, nesne yönelimli programlama (OOP) prensipleri kullanılarak geliştir
 
 - `Storable.java`: Temel stok davranışlarını tanımlayan arayüz.
 - `Product.java`: Temel ürün sınıfı (Base Class).
-- `PerishableProduct.java`: Son kullanma tarihli ürünler için türetilmiş sınıf (Inheritance).
-- `Inventory.java`: Ürün listesini yöneten merkezi sınıf (Composition).
+- `PerishableProduct.java`: Son kullanma tarihli ürünler için türetilmiş sınıf.
+- `Inventory.java`: Ürün listesini yöneten merkezi sınıf.
 - `StockManager.java`: Envanter operasyonlarını koordine eden yönetici sınıf.
 - `InventoryFileManager.java`: Veri kaydetme ve yükleme işlemlerinden sorumlu sınıf.
-- `ProductTest.java`: Birim testlerin bulunduğu sınıf.
+- `SystemTestRunner.java`: Tüm testleri yöneten ve raporlayan merkezi test motoru.
+
+## Test Modülleri
+
+Sistem güvenilirliği aşağıdaki bağımsız test sınıfları ile sağlanmaktadır:
+
+- **ProductTest:** Temel ürün fonksiyonlarının doğrulanması.
+- **InventoryTest:** Liste yönetimi ve ürün arama fonksiyonlarının testi.
+- **StockManagerTest:** Stok güncelleme ve hata fırlatma mekanizmalarının kontrolü.
+- **InventoryFileManagerTest:** Dosya okuma/yazma erişim testleri.
 
 ## Kurulum ve Çalıştırma
 
@@ -35,14 +45,8 @@ Bu proje, nesne yönelimli programlama (OOP) prensipleri kullanılarak geliştir
    javac *.java
    ```
 
-# Önce her şeyi derleriz
+Ana programı çalıştırın (20 ürünlük envanteri işler ve kaydeder):
+-> java Main
 
-javac \*.java
-
-# Ana programı çalıştırırız (Dosya kaydı yapacak mı bakılır)
-
-java Main
-
-# Testleri çalıştırırız (10/10 veriyor mu bakılır)
-
-java ProductTest
+Tüm sistem testlerini çalıştırın ve raporu görün:
+-> java SystemTestRunner
