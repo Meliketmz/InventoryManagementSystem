@@ -1,5 +1,5 @@
 === SİSTEM GENEL TEST RAPORU ===
-Tarih: 2026-01-05T20:03:24.372734600
+Tarih: 2026-01-05T22:11:25.276045600
 ---------------------------------
 [MODÜL: INVENTORY]
 - 10 Birim Ekleme ve Liste Kontrolü: BAŞARILI
