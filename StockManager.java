@@ -18,26 +18,26 @@ public class StockManager {
     if (p != null) {
         // Burada updateStock metodu hata fırlatabilir, o yüzden throws ekledik
         p.updateStock(amount);
-        System.out.println(productName + " stoku güncellendi. Yeni miktar: " + p.getStockLevel());
+        System.out.println(productName + " stok guncellendi. Yeni miktar: " + p.getStockLevel());
     } else {
-        System.out.println("Hata: Ürün bulunamadı!");
+        System.out.println("Hata: Urun bulunamadi!");
     }
     }
 
     // Tedarikçi ve envanter durumunu raporlar
     public void displayInventoryStatus() {
-        System.out.println("--- " + supplierName + " Tedarikçisi Envanter Raporu ---");
+        System.out.println("--- " + supplierName + " Tedarikcisi Envanter Raporu ---");
         for (Product p : inventory.getAllProducts()) {
-            System.out.println("Ürün: " + p.getName() + " | Stok: " + p.getStockLevel());
+            System.out.println("Urun: " + p.getName() + " | Stok: " + p.getStockLevel());
         }
         inventory.checkLowStockAlerts();
     }
 
     public void removeProductFromInventory(String id) {
     if (inventory.removeProduct(id)) {
-        System.out.println("ID'si " + id + " olan ürün başarıyla silindi.");
+        System.out.println("ID'si " + id + " olan urun basariyla silindi.");
     } else {
-        System.out.println("Hata: Silinmek istenen ürün bulunamadı!");
+        System.out.println("Hata: Silinmek istenen urun bulunamadi!");
     }
     }
 }

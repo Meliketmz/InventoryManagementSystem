@@ -49,14 +49,14 @@ public class SystemTestRunner {
     }
 
     private static void logResult(String testName, boolean success) {
-        String status = success ? "BAŞARILI" : "HATA";
+        String status = success ? "BASARILI" : "HATA";
         String line = "- " + testName + ": " + status;
         results.add(line);
         System.out.println(line);
     }
 
     private static void saveResultsToFile() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("test_log.txt"))) {
+        try  (PrintWriter writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream("test_log.txt"), "UTF-8"))) {
             for (String res : results) {
                 writer.println(res);
             }

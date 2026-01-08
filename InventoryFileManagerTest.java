@@ -11,7 +11,7 @@ public class InventoryFileManagerTest {
 
         File file = new File("test_inventory.txt");
         boolean fileExists = file.exists();
-        System.out.println(fileExists ? "[BAŞARILI] Dosya Oluşturuldu" : "[HATA] Dosya Yok");
+        System.out.println(fileExists ? "[BASARILI] Dosya Olusturuldu" : "[HATA] Dosya Yok");
 
         if(fileExists) file.delete(); // Testten sonra temizlik
     }

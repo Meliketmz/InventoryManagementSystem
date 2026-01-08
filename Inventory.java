@@ -33,7 +33,7 @@ public class Inventory {
     public void checkLowStockAlerts() {
         for (Product p : products) {
             if (p.isLowStock()) {
-                System.out.println("KRİTİK STOK UYARISI: " + p.getName() + " (Mevcut: " + p.getStockLevel() + ")");
+                System.out.println("KRITIK STOK UYARISI: " + p.getName() + " (Mevcut: " + p.getStockLevel() + ")");
             }
         }
     }

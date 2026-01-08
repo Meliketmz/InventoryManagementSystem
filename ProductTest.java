@@ -20,13 +20,13 @@ public class ProductTest {
             if (testInventoryAddIntegrity()) passCount++;   // 10
 
             System.out.println("\n====================================================");
-            System.out.println("ÖZET: 10 testten " + passCount + " tanesi başarıyla geçti.");
+            System.out.println("ÖZET: 10 testten " + passCount + " tanesi başariyla geçti.");
             
             if (passCount == 10) {
-                System.out.println("DURUM: MÜKEMMEL - Sistem tüm senaryolarda kararlı!");
+                System.out.println("DURUM: MÜKEMMEL - Sistem tüm senaryolarda kararli!");
             }
         } catch (Exception e) {
-            System.out.println("Test sırasında kritik sistem hatası: " + e.getMessage());
+            System.out.println("Test sirasinda kritik sistem hatasi: " + e.getMessage());
         }
     }
 
@@ -35,7 +35,7 @@ public class ProductTest {
         Product p = new Product("T1", "Elma", 10, 5.0);
         p.updateStock(20);
         boolean res = p.getStockLevel() == 30;
-        printResult("1. Pozitif Stok Artışı", res);
+        printResult("1. Pozitif Stok Artisi", res);
         return res;
     }
 
@@ -44,7 +44,7 @@ public class ProductTest {
         Product p = new Product("T2", "Armut", 50, 5.0);
         p.updateStock(-20);
         boolean res = p.getStockLevel() == 30;
-        printResult("2. Pozitif Stok Azalışı", res);
+        printResult("2. Pozitif Stok Azalisi", res);
         return res;
     }
 
@@ -55,7 +55,7 @@ public class ProductTest {
             p.updateStock(-10); // Hata fırlatmalı
             return false;
         } catch (InsufficientStockException e) {
-            printResult("3. Yetersiz Stok Hata Fırlatma", true);
+            printResult("3. Yetersiz Stok Hata Firlatma", true);
             return true;
         }
     }
@@ -82,7 +82,7 @@ public class ProductTest {
     public static boolean testLowStockAlertTrue() {
         Product p = new Product("T6", "Kritik", 3, 5.0); // 3 < 5
         boolean res = p.isLowStock();
-        printResult("6. Kritik Stok Uyarı (True)", res);
+        printResult("6. Kritik Stok Uyari (True)", res);
         return res;
     }
 
@@ -98,7 +98,7 @@ public class ProductTest {
     public static boolean testPerishableProductInheritance() {
         PerishableProduct pp = new PerishableProduct("T8", "Süt", 10, 20.0, "2025-01-01");
         boolean res = pp instanceof Product && pp.getName().equals("Süt");
-        printResult("8. Kalıtım ve Polimorfizm", res);
+        printResult("8. Kalitim ve Polimorfizm", res);
         return res;
     }
 
@@ -106,7 +106,7 @@ public class ProductTest {
     public static boolean testPriceValidation() {
         Product p = new Product("T9", "Ürün", 10, 99.99);
         boolean res = p.getPrice() == 99.99;
-        printResult("9. Fiyat Veri Koruması", res);
+        printResult("9. Fiyat Veri Korumasi", res);
         return res;
     }
 
@@ -121,6 +121,6 @@ public class ProductTest {
     }
 
     private static void printResult(String name, boolean success) {
-        System.out.println((success ? "[BAŞARILI] " : "[HATA]     ") + name);
+        System.out.println((success ? "[BASARILI] " : "[HATA]     ") + name);
     }
 }

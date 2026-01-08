@@ -10,12 +10,12 @@ public class StockManagerTest {
             // Başarılı Güncelleme
             sm.manageStockUpdate("Yönetici Test", 20);
             boolean upCheck = inv.findProductByName("Yönetici Test").getStockLevel() == 70;
-            System.out.println(upCheck ? "[BAŞARILI] Stok Artışı" : "[HATA] Artış");
+            System.out.println(upCheck ? "[BASARILI] Stok Artisi" : "[HATA] Artis");
 
             // Hata Yakalama Testi
             sm.manageStockUpdate("Yönetici Test", -100); 
         } catch (InsufficientStockException e) {
-            System.out.println("[BAŞARILI] Yetersiz Stok Hatası Yakalandı");
+            System.out.println("[BASARILI] Yetersiz Stok Hatasi Yakalandi");
         }
     }
 }

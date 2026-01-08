@@ -1,19 +1,6 @@
-P002,Ekmek,50,10.0
-P003,Pirinç (1kg),40,45.0
-P004,Makarna,60,15.0
-P005,Zeytinyağı,20,250.0
-P006,Çay (500g),30,80.0
-P007,Şeker (1kg),25,35.0
-P008,Su (5L),100,20.0
-P009,Sabun,45,12.0
-P010,Deterjan,15,180.0
-P011,USB Bellek,50,200.0
-P012,Mouse,15,350.0
-P013,Klavye,10,600.0
-P014,Ampul LED,80,45.0
-P015,Pil (AA 4lu),120,75.0
-P016,Süt,10,30.0
-P017,Yoğurt,8,45.0
-P018,Peynir,12,120.0
-P019,Tavuk,5,150.0
-P020,Yumurta (30lu),20,90.0
+P001,Patlican,5,10.0
+P002,Sut,5,14.0
+P003,Seker,11,30.0
+P004,Cikolata,18,23.0
+P005,Muz,60,55.23
+P006,Kivi,7,47.5

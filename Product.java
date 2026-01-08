@@ -19,7 +19,7 @@ public class Product implements Storable {
     @Override
     public void updateStock(int quantity) throws InsufficientStockException {
     if (this.stockQuantity + quantity < 0) {
-        throw new InsufficientStockException("Hata: " + name + " için yetersiz stok! (Mevcut: " + stockQuantity + ")");
+        throw new InsufficientStockException("Hata: " + name + " icin yetersiz stok! (Mevcut: " + stockQuantity + ")");
     }
     this.stockQuantity += quantity;
     }

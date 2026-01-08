@@ -20,9 +20,9 @@ public class InventoryFileManager {
                 // Verileri: ID,İsim,Stok,Fiyat formatında kaydediyoruz
                 writer.println(p.getId() + "," + p.getName() + "," + p.getStockLevel() + "," + p.getPrice());
             }
-            System.out.println("Sistem: Envanter başarıyla '" + fileName + "' dosyasına kaydedildi.");
+            System.out.println("Sistem: Envanter basariyla '" + fileName + "' dosyasina kaydedildi.");
         } catch (IOException e) {
-            System.out.println("Dosya yazma hatası: " + e.getMessage());
+            System.out.println("Dosya yazma hatasi: " + e.getMessage());
         }
     }
 
@@ -40,9 +40,9 @@ public class InventoryFileManager {
                     inventory.addProduct(p);
                 }
             }
-            System.out.println("Sistem: Veriler dosyadan başarıyla yüklendi.");
+            System.out.println("Sistem: Veriler dosyadan basariyla yuklendi.");
         } catch (IOException | NumberFormatException e) {
-            System.out.println("Dosya okuma hatası: " + e.getMessage());
+            System.out.println("Dosya okuma hatasi: " + e.getMessage());
         }
     }
 }

@@ -9,14 +9,14 @@ public class InventoryTest {
         }
         
         boolean countCheck = inv.getAllProducts().size() == 10;
-        System.out.println(countCheck ? "[BAŞARILI] 10 Ürün Ekleme" : "[HATA] Liste Boyutu");
+        System.out.println(countCheck ? "[BASARILI] 10 Urun Ekleme" : "[HATA] Liste Boyutu");
 
         // Arama Testi
         boolean searchCheck = inv.findProductByName("Test Ürünü 5") != null;
-        System.out.println(searchCheck ? "[BAŞARILI] Ürün Arama" : "[HATA] Arama");
+        System.out.println(searchCheck ? "[BASARILI] Urun Aram" : "[HATA] Arama");
 
         // Olmayan Ürün Testi
         boolean nullCheck = inv.findProductByName("Hayali") == null;
-        System.out.println(nullCheck ? "[BAŞARILI] Null Kontrolü" : "[HATA] Yanlış Arama");
+        System.out.println(nullCheck ? "[BASARILI] Null Kontrolu" : "[HATA] Yanlış Arama");
     }
 }
